@@ -5,8 +5,8 @@ import { redirect } from "next/navigation";
 
 export default async function Index() {
 	const profile = await getCurrentUser()
-	if(profile?.id)redirect("/chat/new")
-
+	if (profile?.id) redirect("/chat/new")
+	
 	return (
 		<div className="flex flex-col items-center justify-center flex-1 ">
 			<h1 className="text-4xl font-bold mb-6">Welcome to Chat AI</h1>

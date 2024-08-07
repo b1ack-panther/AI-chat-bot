@@ -80,9 +80,9 @@ export default async function Sidebar({ chatId }: { chatId: string }) {
 					<h4 className="w-full pl-2 mb-2 font-semibold leading-none text-lg sticky top-0">
 						History
 					</h4>
-					{conversations.map((cn) => (
+					{conversations.length ? conversations.map((cn) => (
 						<ConversationList conversation={cn} chatId={chatId} />
-					))}
+					)) : <p className="ml-2 mt-auto font-bold text-gray-500">No Chats</p>}
 				</div>
 			</ScrollArea>
 		</>

@@ -3,13 +3,16 @@ import Chat from "@/components/Chat";
 import { createClient } from "@/utils/supabase/server";
 import React, { Suspense } from "react";
 import ChatInput from "./ChatInput";
+import getInitialUser from "@/utils/getInitialUser";
 
 const Page = async({
 	params: { chatId: paramsChatId },
 }: {
 	params: { chatId: string };
-}) => { 
-	const { data: messages } = (await createClient()
+	}) => { 
+	const supabase = createClient();
+	const userProfile = await getInitialUser()
+	const { data: messages } = (await supabase
 		.from("messages")
 		.select()
 		.eq("chat_id", paramsChatId)) as any;

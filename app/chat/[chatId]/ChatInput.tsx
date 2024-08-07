@@ -3,12 +3,10 @@ import { handleSubmit } from "@/actions/server-actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { SendHorizonal } from "lucide-react";
-import { useRouter } from "next/navigation";
 import React, { useRef } from "react";
 
 const ChatInput = ({ paramsChatId }: { paramsChatId: string }) => {
 	const formRef = useRef<HTMLFormElement>(null);
-	const router = useRouter();
 
 	return (
 		<section className="p-2">
