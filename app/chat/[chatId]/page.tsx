@@ -11,7 +11,7 @@ const Page = async({
 	params: { chatId: string };
 	}) => { 
 	const supabase = createClient();
-	const userProfile = await getInitialUser()
+	await getInitialUser()
 	const { data: messages } = (await supabase
 		.from("messages")
 		.select()
