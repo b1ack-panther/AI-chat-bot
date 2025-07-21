@@ -54,7 +54,7 @@ export async function OpenAIStream(payload: OpenAIStreamPayload) {
 						console.log(json.choices);
 						const text = json.choices[0].delta?.content || "";
 
-						if (counter < 2 && (text.match(/\n/) || []).length) {
+						if (counter < 2 && (text.match(/\n/) || [])?.length) {
 							return;
 						}
 

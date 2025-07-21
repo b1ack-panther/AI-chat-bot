@@ -20,7 +20,7 @@ export const handleSubmit = async (
 		}
 		let title =
 			input.split(" ").slice(0, 8).join(" ") +
-			(input.split(" ").length > 8 ? "..." : "");
+			(input.split(" ")?.length > 8 ? "..." : "");
 		const { data, error } = await supabase
 			.from("chats")
 			.insert({ user_id: user.id, title })
